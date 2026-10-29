@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: vision-sentinel-camera
+    runtime: static
+    buildCommand: echo "Static camera tracker - no build needed"
+    staticPublishPath: ./site
+    headers:
+      - path: /*
+        name: X-Content-Type-Options
+        value: nosniff
+      - path: /*
+        name: Referrer-Policy
+        value: strict-origin-when-cross-origin
